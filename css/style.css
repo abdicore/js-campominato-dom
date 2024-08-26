@@ -37,8 +37,11 @@ footer {
 }
 
 .cell.clicked {
+    cursor: not-allowed;
     background-color: green;
 }
+
+
 
 .cell.clicked.bomb {
     background-image: url(../img/bomba.jpg) ;

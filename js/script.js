@@ -11,10 +11,10 @@ LA partita termina quando il giocatore clicca su una bomba o quando raggiunge il
 (ovvero quando ha rivelato tutte le celle che non sono bombe).
 Al termine della partita, il software deve comunicare il punteggio, cioè il numero di volte che l'utente ha cliccato su una cella che 
 non era una bomba
-# MILESTONE 1
+# MILESTONE 1 ok
 Prepariamo "Qualcosa" per tenere il punteggio dell'utente. ok
-Quando l'utente clicca su una cella, incrementiamo il punteggio. 
-Se riusciamo, facciamo anche in modo da non poter più cliccare sulla stessa cella
+Quando l'utente clicca su una cella, incrementiamo il punteggio. ok
+Se riusciamo, facciamo anche in modo da non poter più cliccare sulla stessa cella ok
 # MILESTONE 2
 Facciamo in modo di generare 16 numeri casuali (tutti diversi) compresi tra 1 e il massimo di caselle disponibili.
 Generiamoli e stampiamo in console per essere certi che siano corretti
@@ -77,8 +77,13 @@ const starGame = () => {
 
         //al clik aggiungo classe clicked
         cell.addEventListener('click', () =>{
-            console.log(i)
-            cell.classList.add('clicked')
+        console.log(i)
+        
+        //se e gia stata cliccata
+        if (cell.classList.contains('clicked')) return;
+        
+
+        cell.classList.add('clicked')
 
         //aumento score
         score++
@@ -88,6 +93,14 @@ const starGame = () => {
 
         // inserisco in pagina
         scoreElement.innerText = score;
+
+        /*Se riusciamo, facciamo anche in modo da non poter più cliccare 
+        sulla stessa cella*/
+
+        cell.classList.add('looked')
+
+        
+
         })
 
         // Pulisco lo score prima di aggiungere risultato
