@@ -60,10 +60,10 @@ const genereteBombs = (totalCell, totalBombs) => {
     const bombs = [];
     while(bombs.length < totalBombs){
     //genero 16 numeri diversi
-    const randomNumber = Math.floor(Math.random() * totalCell) +1 
+    const randomNumber = Math.floor(Math.random() * totalCell) +1;
+    //inserisco i numeri array bombs
+    bombs.push(randomNumber);
 }
-
-
     return bombs;
 
 }
@@ -132,6 +132,11 @@ const totalCell = rows * cols;
 let score = 0;
 const totalBombs = 16;
 const maxScore = totalCell - totalBombs;
+
+//Creaiamo le bombe
+
+const bombs = genereteBombs(totalCell, totalBombs);
+console.log(bombs)
 
 // Reagiamo al click
 button.addEventListener('click',starGame) 
