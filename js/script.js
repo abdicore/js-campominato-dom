@@ -29,6 +29,28 @@ function createCell (){
 
 
 //Fase di preparazione
+const starGame = () => {
+    // Pulisco la griglia prima di generare nuove celle
+    grid.innerHTML = '';
+    //Cambio il tsto del button
+    button.innerText('ricomincia');
+
+    // Creo un ciclo per il numero di totalCell
+    for (let i = 1; i <= totalCell; i++) {
+        // Creo la cella
+        const cell = document.createElement('div');
+        // Aggiungo la classe alla cella
+        cell.className = 'cell';
+        // Inserisco il numero progressivo nella cella
+        cell.textContent = i;
+
+        // Inserisco la cella nella griglia
+        grid.appendChild(cell);
+    }
+};
+
+
+
 
 
 //richiamo gli elemnti dal dom
@@ -43,22 +65,4 @@ const cols = 10;
 const totalCell = rows * cols;
 
 // Reagiamo al click
-button.addEventListener('click', function() {
-  
-
-    // Pulisco la griglia prima di generare nuove celle
-    grid.innerHTML = '';
-
-    // Creo un ciclo per il numero di totalCell
-    for (let i = 1; i <= totalCell; i++) {
-        // Creo la cella
-        const cell = document.createElement('div');
-        // Aggiungo la classe alla cella
-        cell.className = 'cell';
-        // Inserisco il numero progressivo nella cella
-        cell.textContent = i;
-
-        // Inserisco la cella nella griglia
-        grid.appendChild(cell);
-    }
-});
+button.addEventListener('click',starGame) 
