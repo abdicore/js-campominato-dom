@@ -21,7 +21,7 @@ Rimuoviamo le celle che abbiamo inserito nell'HTML in modo da generarle tramite 
 vengono generate 100 celle in 10 righe da 10 celle ciascuna.
 */
 
-//Dichiarazioni funzioni
+//DICHIARAZIONI FUNZIONI
 // Fuznione per generare cella
 function createCell (cellNumeber){
     // Creo la cella
@@ -35,7 +35,15 @@ function createCell (cellNumeber){
 }
 
 
-//Fase di preparazione
+//FASE DI PREPARAZIONE
+//richiamo gli elemnti dal dom
+const grid = document.getElementById('grid')
+const button = document.querySelector('button')
+const select = document.getElementById('select')
+
+
+
+//FUNCTION CORE
 const starGame = () => {
     // Pulisco la griglia prima di generare nuove celle
     grid.innerHTML = '';
@@ -47,16 +55,17 @@ const starGame = () => {
         //Creo una cella
         const cell = createCell(i);
 
+        //al clik aggiungo classe clicked
+        cell.addEventListener('click', () =>{
+            console.log(i)
+        })
 
         // Inserisco la cella nella griglia
         grid.appendChild(cell);
     }
 };
 
-//richiamo gli elemnti dal dom
-const grid = document.getElementById('grid')
-const button = document.querySelector('button')
-const select = document.getElementById('select')
+
 
 //Elementi inizialai
 

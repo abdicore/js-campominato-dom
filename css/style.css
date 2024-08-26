@@ -35,3 +35,7 @@ footer {
     justify-content: center;
     cursor: pointer;
 }
+
+.cell .cliked {
+    background-color: antiquewhite;
+}
