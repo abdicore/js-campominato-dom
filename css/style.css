@@ -39,3 +39,8 @@ footer {
 .cell.clicked {
     background-color: green;
 }
+
+.cell.clicked.bomb {
+    background-image: url(../img/bomba.jpg) ;
+
+}
