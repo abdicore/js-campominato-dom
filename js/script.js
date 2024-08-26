@@ -43,7 +43,7 @@ Buon divertimento e a domani!
 
 //DICHIARAZIONI FUNZIONI
 // Fuznione per generare cella
-function createCell (cellNumeber){
+const createCell = (cellNumeber) =>{
     // Creo la cella
     const cell = document.createElement('div');
     // Aggiungo la classe alla cella
@@ -51,6 +51,20 @@ function createCell (cellNumeber){
     // Inserisco il numero progressivo nella cella
     cell.textContent = cellNumeber;
     return cell;
+}
+
+//Facciamo in modo di generare 16 numeri casuali (tutti diversi) compresi tra 1 e il massimo di caselle disponibili.
+//Funzione per generare bombe
+
+const genereteBombs = (totalCell, totalBombs) => {
+    const bombs = [];
+    while(bombs.length < totalBombs){
+    //genero 16 numeri diversi
+    const randomNumber = Math.floor(Math.random() * totalCell) +1 
+}
+
+
+    return bombs;
 
 }
 
@@ -81,7 +95,6 @@ const starGame = () => {
         
         //se e gia stata cliccata
         if (cell.classList.contains('clicked')) return;
-        
 
         cell.classList.add('clicked')
 
@@ -99,27 +112,26 @@ const starGame = () => {
 
         cell.classList.add('looked')
 
-        
-
         })
 
         // Pulisco lo score prima di aggiungere risultato
         scoreElement.innerHTML = '';
        
-
         // Inserisco la cella nella griglia
         grid.appendChild(cell);
+
     }
 };
-
-
 
 //Elementi inizialai
 
 const rows = 10;
 const cols = 10;
 const totalCell = rows * cols;
+
 let score = 0;
+const totalBombs = 16;
+const maxScore = totalCell - totalBombs;
 
 // Reagiamo al click
 button.addEventListener('click',starGame) 
