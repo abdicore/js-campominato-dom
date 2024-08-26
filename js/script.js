@@ -58,6 +58,7 @@ const starGame = () => {
         //al clik aggiungo classe clicked
         cell.addEventListener('click', () =>{
             console.log(i)
+            cell.classList.add('clicked')
         })
 
         // Inserisco la cella nella griglia

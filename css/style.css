@@ -36,6 +36,6 @@ footer {
     cursor: pointer;
 }
 
-.cell .cliked {
-    background-color: antiquewhite;
+.cell.clicked {
+    background-color: green;
 }
