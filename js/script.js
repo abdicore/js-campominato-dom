@@ -13,7 +13,7 @@ Al termine della partita, il software deve comunicare il punteggio, cioè il num
 non era una bomba
 # MILESTONE 1
 Prepariamo "Qualcosa" per tenere il punteggio dell'utente. ok
-Quando l'utente clicca su una cella, incrementiamo il punteggio.
+Quando l'utente clicca su una cella, incrementiamo il punteggio. 
 Se riusciamo, facciamo anche in modo da non poter più cliccare sulla stessa cella
 # MILESTONE 2
 Facciamo in modo di generare 16 numeri casuali (tutti diversi) compresi tra 1 e il massimo di caselle disponibili.
@@ -60,7 +60,7 @@ function createCell (cellNumeber){
 const grid = document.getElementById('grid')
 const button = document.querySelector('button')
 const select = document.getElementById('select')
-const storeElement = document.getElementById('store')
+const scoreElement = document.getElementById('score')
 
 
 //FUNCTION CORE
@@ -80,10 +80,19 @@ const starGame = () => {
             console.log(i)
             cell.classList.add('clicked')
 
-        //aumetno score
+        //aumento score
         score++
-        console.log(score)
+
+        // Pulisco lo store prima di aggiungere risultato
+        scoreElement.innerHTML = '';
+
+        // inserisco in pagina
+        scoreElement.innerText = score;
         })
+
+        // Pulisco lo score prima di aggiungere risultato
+        scoreElement.innerHTML = '';
+       
 
         // Inserisco la cella nella griglia
         grid.appendChild(cell);
