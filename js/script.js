@@ -33,7 +33,7 @@ const starGame = () => {
     // Pulisco la griglia prima di generare nuove celle
     grid.innerHTML = '';
     //Cambio il tsto del button
-    button.innerText('ricomincia');
+     button.innerText = 'Ricomincia';
 
     // Creo un ciclo per il numero di totalCell
     for (let i = 1; i <= totalCell; i++) {
@@ -48,10 +48,6 @@ const starGame = () => {
         grid.appendChild(cell);
     }
 };
-
-
-
-
 
 //richiamo gli elemnti dal dom
 const grid = document.getElementById('grid')
