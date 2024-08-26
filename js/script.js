@@ -22,8 +22,15 @@ vengono generate 100 celle in 10 righe da 10 celle ciascuna.
 */
 
 //Dichiarazioni funzioni
-
-function createCell (){
+// Fuznione per generare cella
+function createCell (cellNumeber){
+    // Creo la cella
+    const cell = document.createElement('div');
+    // Aggiungo la classe alla cella
+    cell.className = 'cell';
+    // Inserisco il numero progressivo nella cella
+    cell.textContent = cellNumeber;
+    return cell;
 
 }
 
@@ -37,12 +44,9 @@ const starGame = () => {
 
     // Creo un ciclo per il numero di totalCell
     for (let i = 1; i <= totalCell; i++) {
-        // Creo la cella
-        const cell = document.createElement('div');
-        // Aggiungo la classe alla cella
-        cell.className = 'cell';
-        // Inserisco il numero progressivo nella cella
-        cell.textContent = i;
+        //Creo una cella
+        const cell = createCell(i);
+
 
         // Inserisco la cella nella griglia
         grid.appendChild(cell);
